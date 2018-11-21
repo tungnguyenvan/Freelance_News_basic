@@ -18,8 +18,11 @@ class UserController
 
 		if ($result) {
 			$_SESSION['name'] = $result->name;
-			$_SESSION['id_user'] = $result->id;
 			header('location:index.php');
+			$_SESSION['id_user'] = $result->id;
+			if ($result->type == 1) {
+				$_SESSION['admin'] = true;
+			}
 			if (isset($_SESSION['user_error'])) {
 				unset($_SESSION['user_error']);
 			}

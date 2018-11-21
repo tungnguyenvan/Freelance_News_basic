@@ -98,6 +98,15 @@ if (isset($_POST['logout'])) {
                     <?php
                     if (isset($_SESSION['name'])) {
                         ?>
+                        <?php 
+                        if (isset($_SESSION['admin'])) {
+                        ?>
+                        <li>
+                            <a href="create.php">Đăng tin</a>
+                        </li>
+                        <?php
+                        }
+                        ?>
                         <li>
                             <a>
                                 <span class ="glyphicon glyphicon-user"></span>
@@ -172,7 +181,7 @@ if (isset($_POST['logout'])) {
                             <textarea class="form-control" name="input_comment" rows="3"></textarea>
                         </div>
                         <?php 
-                        if (isset($_SESSION['id_user'])) {
+                        if (isset($_SESSION['id_user']) || isset($_SESSION['admin'])) {
                         ?>
                         <button type="submit" name="comment" class="btn btn-primary">Gửi</button>
                         <?php

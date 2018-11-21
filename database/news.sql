@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2018 lúc 01:55 PM
+-- Thời gian đã tạo: Th10 21, 2018 lúc 12:27 PM
 -- Phiên bản máy phục vụ: 10.1.36-MariaDB
 -- Phiên bản PHP: 7.2.11
 
@@ -1293,7 +1293,8 @@ INSERT INTO `tintuc` (`id`, `TieuDe`, `TieuDeKhongDau`, `TomTat`, `NoiDung`, `Hi
 (998, 'Anne Hathaway trở thành miêu nữ trong Batman 3', '', 'Ngôi sao phim Yêu và tình dược được chọn vào vai phản diện Catwoman trong phim The Dark Knight Rises của đạo diễn Christopher Nolan. Cô cũng vừa nhận một vai trong phim truyền hình Glee.', '</h3>Nội dung tin tức: Khoá học Lập trình PHP tại trung tâm đào tạo tin học khoa phạm</h3>\r\n    	<p>\r\n    	<b>Hotline kỹ thuật <b>: 0967 908 907<br>\r\n    	<b>Hotline tư vấn kháo học <b>: 094 276 4080<br>\r\n    	<b>Địa chỉ </b>: 90 Lê Thị Riêng, P.Bến Thành, Q1, TPHCM<br>\r\n    	<b>Website</b>: khoapham.vn<br>\r\n    	<b>Học Online tại :</b>online.khoapham.vn<br>\r\n    	</p>', 'page.jpg', 1, 0, 19, NULL, NULL);
 INSERT INTO `tintuc` (`id`, `TieuDe`, `TieuDeKhongDau`, `TomTat`, `NoiDung`, `Hinh`, `NoiBat`, `SoLuotXem`, `idLoaiTin`, `created_at`, `updated_at`) VALUES
 (999, 'The Kings Speech dẫn đầu đề cử Oscar của Anh', '', 'Bộ phim tâm lý, lịch sử kể về cuộc đời Vua George VI giành được 14 đề cử BAFTA. Thiên nga đen của Natalie Portman về nhì với 12 đề cử, trong khi đó The Social Network chỉ được 6 đề cử.', '</h3>Nội dung tin tức: Khoá học Lập trình PHP tại trung tâm đào tạo tin học khoa phạm</h3>\r\n    	<p>\r\n    	<b>Hotline kỹ thuật <b>: 0967 908 907<br>\r\n    	<b>Hotline tư vấn kháo học <b>: 094 276 4080<br>\r\n    	<b>Địa chỉ </b>: 90 Lê Thị Riêng, P.Bến Thành, Q1, TPHCM<br>\r\n    	<b>Website</b>: khoapham.vn<br>\r\n    	<b>Học Online tại :</b>online.khoapham.vn<br>\r\n    	</p>', 'the_king_s_speech17.jpg', 1, 0, 19, NULL, NULL),
-(1000, 'Nadal trở lại Davis Cup', 'Nadal-Tro-Lai-Davis-Cup', 'Lần đầu tiên kể từ năm 2009, tay vợt số một thế giới có mặt ở đội tuyển dự Davis Cup của Tây Ban Nha.', '</h3>Nội dung tin tức: Khoá học Lập trình PHP tại trung tâm đào tạo tin học khoa phạm</h3>\r\n    	<p>\r\n    	<b>Hotline kỹ thuật <b>: 0967 908 907<br>\r\n    	<b>Hotline tư vấn kháo học <b>: 094 276 4080<br>\r\n    	<b>Địa chỉ </b>: 90 Lê Thị Riêng, P.Bến Thành, Q1, TPHCM<br>\r\n    	<b>Website</b>: khoapham.vn<br>\r\n    	<b>Học Online tại :</b>online.khoapham.vn<br>\r\n    	</p>', '51.jpg', 1, 0, 22, NULL, NULL);
+(1000, 'Nadal trở lại Davis Cup', 'Nadal-Tro-Lai-Davis-Cup', 'Lần đầu tiên kể từ năm 2009, tay vợt số một thế giới có mặt ở đội tuyển dự Davis Cup của Tây Ban Nha.', '</h3>Nội dung tin tức: Khoá học Lập trình PHP tại trung tâm đào tạo tin học khoa phạm</h3>\r\n    	<p>\r\n    	<b>Hotline kỹ thuật <b>: 0967 908 907<br>\r\n    	<b>Hotline tư vấn kháo học <b>: 094 276 4080<br>\r\n    	<b>Địa chỉ </b>: 90 Lê Thị Riêng, P.Bến Thành, Q1, TPHCM<br>\r\n    	<b>Website</b>: khoapham.vn<br>\r\n    	<b>Học Online tại :</b>online.khoapham.vn<br>\r\n    	</p>', '51.jpg', 1, 0, 22, NULL, NULL),
+(1002, 'Tháng tư là lời nói dối của em', '', 'ád', 'ădasda', 'image-11-21-2018.jpg', 0, 0, 2, '2018-11-21 11:12:13', '2018-11-21 11:12:13');
 
 -- --------------------------------------------------------
 
@@ -1306,6 +1307,7 @@ CREATE TABLE `users` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `type` int(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1314,25 +1316,25 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Ngọc Hương', 'huongnguyen08.cv@gmail.com', '$2y$10$CEdbdsSMU9Nv.6yjdRMEtOhR0kdIiOBWtNR2Bup9upjueOPbcsM9m', '2016-06-09 03:05:09', '2016-06-18 07:06:27'),
-(2, 'Hương Hương', 'huongnguyen08@gmail.com', '$2y$10$VSYdTPHgu6iQ0NBouPmQTe2nxENOouLMEcjQiG54cFNlUbEInurxC', '2016-06-09 03:05:09', NULL),
-(3, 'User_3', 'user_3@mymail.com', '$2y$10$DES3NL8tozlU99dvO9o4lOfYyYcaM9n86gJcJV5.fz2G8b6qLa6Gq', '2016-06-09 03:05:09', NULL),
-(4, 'User_4', 'user_4@mymail.com', '$2y$10$xqfx9motmrCAEuEjCyQroOo/eFqum1hPhgwnz5LSLkhdyGHvf6l8O', '2016-06-09 03:05:10', NULL),
-(5, 'User_5', 'user_5@mymail.com', '$2y$10$rTviORV94uWv/KcNK7s0UeGwlQ2DSN5UGSOAzMkZ6sGgfr9nE2fSq', '2016-06-09 03:05:10', NULL),
-(6, 'User_6', 'user_6@mymail.com', '$2y$10$AwcqOIqwnPM9ZkYE1e6x.OkQAjY5V7H.WP73VVod/2mGNp1Y0zWUy', '2016-06-09 03:05:10', NULL),
-(7, 'User_7', 'user_7@mymail.com', '$2y$10$nSJhdDCm7zfF5uZpkhEuQufsLAqc1OZZnTME4AcTIx/2PsnnbrpZ6', '2016-06-09 03:05:10', NULL),
-(8, 'User_8', 'user_8@mymail.com', '$2y$10$s1ik567.aaB/ZbykP5zBR.20Ps5Qd6EPkhHFGdSQwERYmX1G/CnEK', '2016-06-09 03:05:10', NULL),
-(9, 'User_9', 'user_9@mymail.com', '$2y$10$/GQdzMM1G0CsrEF7RnQy4eHCkO2SqTNbE6QyRXCBtOuvyqIaFoMnm', '2016-06-09 03:05:10', NULL),
-(10, 'User_10', 'user_10@mymail.com', '$2y$10$gV.fAHxmpvB57JXKIEuUYumcZZhbCqtM8MpXDZOfDFBTl6X0WAHiK', '2016-06-09 03:05:10', NULL),
-(11, 'h', 'huongnguyenak96@gmail.comhh', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL),
-(12, 'Hương Hương', 'huongnguyenak96@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL),
-(14, 'H', 'huongnguyenak96@gmail.comhhHHHHHHHHHHHHHHHHHHHHH', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL),
-(15, 'hhh', 'huongnguyenak96@gmail.comhhh', 'c4ca4238a0b923820dcc509a6f75849b', '2017-04-06 08:20:16', NULL),
-(16, '', '', 'd41d8cd98f00b204e9800998ecf8427e', '2017-04-06 09:09:53', NULL),
-(17, 'Tùng', 'tung@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', '2018-10-29 14:24:44', NULL),
-(19, '', 'tung1@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', '2018-10-30 03:37:43', NULL),
-(20, 'nguyễn Văn Tùng', 'tung2@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', '2018-10-30 03:38:54', NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `type`, `created_at`, `updated_at`) VALUES
+(1, 'Ngọc Hương', 'huongnguyen08.cv@gmail.com', '$2y$10$CEdbdsSMU9Nv.6yjdRMEtOhR0kdIiOBWtNR2Bup9upjueOPbcsM9m', 0, '2016-06-09 03:05:09', '2016-06-18 07:06:27'),
+(2, 'Hương Hương', 'huongnguyen08@gmail.com', '$2y$10$VSYdTPHgu6iQ0NBouPmQTe2nxENOouLMEcjQiG54cFNlUbEInurxC', 0, '2016-06-09 03:05:09', NULL),
+(3, 'User_3', 'user_3@mymail.com', '$2y$10$DES3NL8tozlU99dvO9o4lOfYyYcaM9n86gJcJV5.fz2G8b6qLa6Gq', 0, '2016-06-09 03:05:09', NULL),
+(4, 'User_4', 'user_4@mymail.com', '$2y$10$xqfx9motmrCAEuEjCyQroOo/eFqum1hPhgwnz5LSLkhdyGHvf6l8O', 0, '2016-06-09 03:05:10', NULL),
+(5, 'User_5', 'user_5@mymail.com', '$2y$10$rTviORV94uWv/KcNK7s0UeGwlQ2DSN5UGSOAzMkZ6sGgfr9nE2fSq', 0, '2016-06-09 03:05:10', NULL),
+(6, 'User_6', 'user_6@mymail.com', '$2y$10$AwcqOIqwnPM9ZkYE1e6x.OkQAjY5V7H.WP73VVod/2mGNp1Y0zWUy', 0, '2016-06-09 03:05:10', NULL),
+(7, 'User_7', 'user_7@mymail.com', '$2y$10$nSJhdDCm7zfF5uZpkhEuQufsLAqc1OZZnTME4AcTIx/2PsnnbrpZ6', 0, '2016-06-09 03:05:10', NULL),
+(8, 'User_8', 'user_8@mymail.com', '$2y$10$s1ik567.aaB/ZbykP5zBR.20Ps5Qd6EPkhHFGdSQwERYmX1G/CnEK', 0, '2016-06-09 03:05:10', NULL),
+(9, 'User_9', 'user_9@mymail.com', '$2y$10$/GQdzMM1G0CsrEF7RnQy4eHCkO2SqTNbE6QyRXCBtOuvyqIaFoMnm', 0, '2016-06-09 03:05:10', NULL),
+(10, 'User_10', 'user_10@mymail.com', '$2y$10$gV.fAHxmpvB57JXKIEuUYumcZZhbCqtM8MpXDZOfDFBTl6X0WAHiK', 0, '2016-06-09 03:05:10', NULL),
+(11, 'h', 'huongnguyenak96@gmail.comhh', 'c4ca4238a0b923820dcc509a6f75849b', 0, NULL, NULL),
+(12, 'Hương Hương', 'huongnguyenak96@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 0, NULL, NULL),
+(14, 'H', 'huongnguyenak96@gmail.comhhHHHHHHHHHHHHHHHHHHHHH', 'c4ca4238a0b923820dcc509a6f75849b', 0, NULL, NULL),
+(15, 'hhh', 'huongnguyenak96@gmail.comhhh', 'c4ca4238a0b923820dcc509a6f75849b', 0, '2017-04-06 08:20:16', NULL),
+(16, '', '', 'd41d8cd98f00b204e9800998ecf8427e', 0, '2017-04-06 09:09:53', NULL),
+(17, 'Tùng', 'tung@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 0, '2018-10-29 14:24:44', NULL),
+(19, '', 'tung1@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 0, '2018-10-30 03:37:43', NULL),
+(20, 'nguyễn Văn Tùng', 'tung2@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', 1, '2018-10-30 03:38:54', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -1405,13 +1407,13 @@ ALTER TABLE `slide`
 -- AUTO_INCREMENT cho bảng `theloai`
 --
 ALTER TABLE `theloai`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tintuc`
 --
 ALTER TABLE `tintuc`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
 
 --
 -- AUTO_INCREMENT cho bảng `users`

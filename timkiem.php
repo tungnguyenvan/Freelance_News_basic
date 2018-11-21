@@ -89,6 +89,15 @@ if (isset($_POST['logout'])) {
                     <?php
                     if (isset($_SESSION['name'])) {
                         ?>
+                        <?php 
+                        if (isset($_SESSION['admin'])) {
+                        ?>
+                        <li>
+                            <a href="create.php">Đăng tin</a>
+                        </li>
+                        <?php
+                        }
+                        ?>
                         <li>
                             <a>
                                 <span class ="glyphicon glyphicon-user"></span>

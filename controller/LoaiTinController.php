@@ -12,8 +12,15 @@ class LoaiTinController
 		
 	}
 
+	function getAll(){
+		$loaiTinModel = new LoaiTinModel();	
+		$result = $loaiTinModel->getAll();
+
+		return $result;
+	}
+
 	function index($idTheLoai){
-		$loaiTinModel = new LoaiTinModel();
+		$loaiTinModel = new LoaiTinModel();	
 		$result = $loaiTinModel->index($idTheLoai);
 
 		return $result;
