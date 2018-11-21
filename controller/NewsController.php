@@ -11,6 +11,12 @@ class NewsController
 		# code...
 	}
 
+	function save($title, $summary, $content, $idLoaiTin, $image){
+		$newsModel = new NewsModel();
+		$result = $newsModel->save($title, $summary, $content, $idLoaiTin, $image);
+		return $result;
+	}
+
 	function newsFromLoaiTin($idLoaiTin, $possition){
 		$newsModel = new NewsModel();
 		$result = $newsModel->newsFromLoaiTin($idLoaiTin, $possition);

@@ -8,6 +8,7 @@ class UserModel
 	public $id;
 	public $name;
 	public $email;
+	public $type;
 	public $password;
 	public $createAt;
 	public $updateAt;
@@ -29,6 +30,7 @@ class UserModel
 			$user->name = $row['name'];
 			$user->email = $row['email'];
 			$user->password = $password;
+			$user->type = $row['type'];
 			$user->createAt = $row['created_at'];
 			$user->updateAt = $row['updated_at'];
 			return $user;

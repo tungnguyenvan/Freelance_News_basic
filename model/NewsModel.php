@@ -24,6 +24,14 @@ class NewsModel
 		# code...
 	}
 
+	function save($title, $summary, $content, $idLoaiTin, $image){
+		global $connect;
+		$sql = "INSERT INTO tintuc(TieuDe, TomTat, NoiDung, idLoaiTin, Hinh) VALUES(\"$title\" , \"$summary\", \"$content\" , $idLoaiTin, \"$image\")";
+		$result = mysqli_query($connect, $sql);
+
+		return $result;
+	}
+
 	function newsFromLoaiTin($idLoaiTin, $possition){
 		global $connect;
 		$sql = "SELECT * FROM tintuc WHERE idLoaiTin = $idLoaiTin ORDER BY id DESC limit $possition, 10";
