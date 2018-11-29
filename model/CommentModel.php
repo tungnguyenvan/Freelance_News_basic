@@ -17,6 +17,9 @@ class CommentModel
 		# code...
 	}
 
+	/**
+	* function lấy comment của bài đăng
+	*/
 	function index($idNews){
 		global $connect;
 		$sql = "SELECT * FROM comment WHERE idTinTuc = $idNews ORDER BY id DESC";
@@ -39,6 +42,9 @@ class CommentModel
 		return $arr;
 	}
 
+	/**
+	* function lư comment
+	*/
 	function store($idUser, $idNews, $content){
 		global $connect;
 		$sql = "INSERT INTO comment(idUser, idTinTuc, NoiDung, created_at) VALUES ($idUser, $idNews, \"$content\", NOW())";

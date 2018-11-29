@@ -4,6 +4,9 @@
 	// define("DBPASSWORD", "");
 	// define("DBNAME", "news");
 
+	/**
+	* các hàm kế nối đến database
+	*/
 	$connect = mysqli_connect("localhost", "root", "", "news");
 	$connect->set_charset("UTF8");
 	if (!$connect) {

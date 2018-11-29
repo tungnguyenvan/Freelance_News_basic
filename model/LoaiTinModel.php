@@ -17,6 +17,9 @@ class LoaiTinModel
 		
 	}
 
+	/**
+	* function lấy tất cả các loại tin
+	*/
 	function getAll(){
 		global $connect;
 		$sql = "SELECT * FROM loaitin";
@@ -38,6 +41,9 @@ class LoaiTinModel
 		return $arr;
 	}
 
+	/**
+	* funtion lấy loại tin dựa vào thể loại
+	*/
 	function index($idTheLoai){
 		global $connect;
 		$sql = "SELECT * FROM loaitin WHERE idTheLoai = $idTheLoai";
@@ -59,6 +65,9 @@ class LoaiTinModel
 		return $arr;
 	}
 
+	/**
+	* function tìm kiếm lại tin bằng id
+	*/
 	function find($idLoaiTin){
 		global $connect;
 		$sql = "SELECT * FROM loaitin WHERE id = $idLoaiTin";

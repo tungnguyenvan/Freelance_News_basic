@@ -17,9 +17,12 @@ class SlideModel
 		# code...
 	}
 
+	/**
+	* function lấy 3 hình ảnh đầu tiên có trên cơ sở dữ liệu
+	*/
 	function index(){
 		global $connect;
-		$sql = "SELECT * FROM slide limit 3";
+		$sql = "SELECT * FROM slide limit 3 GROUP BY id DESC";
 		$result = mysqli_query($connect, $sql);
 
 		$arrResult = array();
