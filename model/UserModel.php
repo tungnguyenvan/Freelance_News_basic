@@ -18,6 +18,10 @@ class UserModel
 		# code...
 	}
 
+	/**
+	* function liên kết đến mysql để lấy thông tin người dùng đăng nhập
+	*
+	*/
 	function login($email, $password){
 		global $connect;
 		$sql = "SELECT * FROM users WHERE email = \"$email\" AND password = MD5(\"$password\")";
@@ -40,6 +44,9 @@ class UserModel
 
 	}
 
+	/**
+	*function lưu user mới vào mysql
+	*/
 	function store($name, $email, $password){
 		global $connect;
 		$sql = "INSERT INTO users(name, email, password) VALUES(\"$name\", \"$email\", MD5(\"$password\"))";
@@ -52,6 +59,9 @@ class UserModel
 		}
 	}
 
+	/**
+	* function tìm kiếm tên user dựa vào id
+	*/
 	function findName($id){
 		global $connect;
 		$sql = "SELECT * FROM users WHERE id = $id";

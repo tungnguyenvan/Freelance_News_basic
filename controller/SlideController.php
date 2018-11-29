@@ -14,6 +14,9 @@ class SlideController
 		# code...
 	}
 
+	/**
+	* function gọi đến model để lấy ảnh ở slide
+	*/
 	function getSlide(){
 		$slideModel = new SlideModel();
 		$slideModel = $slideModel->index();

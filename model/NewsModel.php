@@ -24,6 +24,9 @@ class NewsModel
 		# code...
 	}
 
+	/**
+	* function lưu bài đăng mới vào cơ sở dữ liệu
+	*/
 	function save($title, $summary, $content, $idLoaiTin, $image){
 		global $connect;
 		$sql = "INSERT INTO tintuc(TieuDe, TomTat, NoiDung, idLoaiTin, Hinh) VALUES(\"$title\" , \"$summary\", \"$content\" , $idLoaiTin, \"$image\")";
@@ -32,6 +35,9 @@ class NewsModel
 		return $result;
 	}
 
+	/**
+	* function lấy danh sách bài đăng dựa vào loại tin
+	*/
 	function newsFromLoaiTin($idLoaiTin, $possition){
 		global $connect;
 		$sql = "SELECT * FROM tintuc WHERE idLoaiTin = $idLoaiTin ORDER BY id DESC limit $possition, 10";
@@ -58,6 +64,9 @@ class NewsModel
 		return $arr;
 	}
 
+	/**
+	* function tính tổng số cá bao nhiêu bài đăng dựa vào loại tin
+	*/
 	function toTal($idLoaiTin){
 		global $connect;
 		$sql = "SELECT COUNT(id) as total FROM tintuc WHERE idLoaiTin = $idLoaiTin ORDER BY id DESC";
@@ -92,6 +101,9 @@ class NewsModel
 		return $news;
 	}
 
+	/**
+	* function tìm kiếm bài đăng
+	*/
 	function findNews($find, $limit){
 		global $connect;
 		$sql = "SELECT * FROM tintuc WHERE TieuDe LIKE \"%$find%\" OR TomTat LIKE \"%$find%\" ORDER BY id DESC limit $limit,10";
@@ -118,6 +130,9 @@ class NewsModel
 		return $arr;
 	}
 
+	/**
+	* function đếm tổng số bài đăng có trên cơ sở dữ liệu dựa vào kết quả tìm kiếm được
+	*/
 	function totalFindNews($find){
 		global $connect;
 		$sql = "SELECT COUNT(id) as total FROM tintuc WHERE TieuDe LIKE \"%$find%\" OR TomTat LIKE \"%$find%\"";
@@ -131,6 +146,9 @@ class NewsModel
 		return $total;
 	}
 
+	/**
+	* function lấy bài đăng nổi bật
+	*/
 	function newsHighLight(){
 		global $connect;
 		$sql = "SELECT * FROM tintuc ORDER BY SoLuotXem DESC limit 0,4";

@@ -16,6 +16,9 @@ class TheLoaiModel
 		# code...
 	}
 
+	/**
+	* function lấy danh sách thể loại có trên cơ sở dữ liệu
+	*/
 	function index(){
 		global $connect;
 		$sql = "SELECT * FROM theloai";

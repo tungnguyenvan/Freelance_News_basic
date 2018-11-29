@@ -12,6 +12,10 @@ class UserController
 		# code...
 	}
 
+	/**
+	* function gọi đến model để login, nếu login thành công thì quay về trang index
+	* còn không sẽ thông bào bằng lưu lại trạng thái thất bại bằng session
+	*/
 	function login($email, $password){
 		$userModel = new UserModel();
 		$result = $userModel->login($email, $password);
@@ -32,6 +36,9 @@ class UserController
 		}
 	}
 
+	/**
+	* function gọi đến model để đăng ký người dùng mới
+	*/
 	function store($name, $email, $password){
 		$userModel = new UserModel();
 		$result = $userModel->store($name, $email, $password);
@@ -48,6 +55,9 @@ class UserController
 		}
 	}
 
+	/**
+	* function gọi đến model để tìm kiếm tên người dùng dựa vào id
+	*/
 	function findName($id){
 		$userModel = new UserModel();
 		$result = $userModel->findName($id);

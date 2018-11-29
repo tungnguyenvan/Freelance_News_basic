@@ -11,6 +11,9 @@ class TheLoaiController
 		# code...
 	}
 
+	/**
+	* function gọi đến model để lấy tất cả thể loại
+	*/
 	function index(){
 		$theLoaiModel = new TheLoaiModel();
 		$theLoais = $theLoaiModel->index();

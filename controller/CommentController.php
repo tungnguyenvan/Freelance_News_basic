@@ -11,6 +11,9 @@ class CommentController
 		# code...
 	}
 
+	/**
+	* function gọi đến model để lấy các comment
+	*/
 	function index($idNews){
 		$commentModel = new CommentModel();
 		$result = $commentModel->index($idNews);
@@ -18,6 +21,9 @@ class CommentController
 		return $result;
 	}
 
+	/**
+	* function gọi đến model để lưu bài đăng
+	*/
 	function store($idUser, $idNews, $content){
 		$commentModel = new CommentModel();
 		$result = $commentModel->store($idUser, $idNews, $content);
